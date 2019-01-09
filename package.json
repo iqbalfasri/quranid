@@ -2,7 +2,7 @@
   "name": "quranid",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://iqbalfasri.js.org/quranid",
+  "homepage": "https://iqbalfasri.js.org/quranid/",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.7.0",
@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
