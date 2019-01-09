@@ -27,7 +27,6 @@ class Home extends Component {
     return (
       <div>
         <Hero>
-          {/* <img style={{width: 200, marginBottom: 20}} src="https://assets-1f14.kxcdn.com/images/logo-lg-w.png" /> */}
           <h1 className="hero-title">Al-Quran Bahasa Indonesia</h1>
         </Hero>
 

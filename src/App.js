@@ -1,26 +1,27 @@
-import React, { Component } from "react";
+import React, { Component, Suspense, lazy } from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
 // Pages
-import Home from "./pages/Home";
 import Surat from "./pages/Surat";
 import Splash from "./pages/Splash";
 import NotFound from "./pages/NotFound";
+const LazyHomePage = lazy(() => import("./pages/Home"));
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      qurans: []
+      qurans: [],
+      isDataLoaded: false
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch("https://al-quran-8d642.firebaseio.com/data.json?print=pretty")
       .then(response => response.json())
-      .then(quran => this.setState({ qurans: quran }))
+      .then(quran => this.setState({ qurans: quran, isDataLoaded: true }))
       .catch(error => console.log(error));
   }
 
@@ -31,14 +32,14 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={() => {
-              if (this.state.qurans.length === 0) {
-                return <Splash />;
-              }
-              return <Home data={this.state.qurans} />;
-            }}
+            render={props =>
+              this.state.isDataLoaded && (
+                <Suspense fallback={<Splash />}>
+                  <LazyHomePage data={this.state.qurans} />
+                </Suspense>
+              )
+            }
           />
-
           <Route path="/surat/:id" component={Surat} />
           <Route component={NotFound} />
         </Switch>
