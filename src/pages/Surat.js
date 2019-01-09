@@ -91,12 +91,24 @@ class Surat extends Component {
           {pageNumber.map(number => {
             return (
               <li
-                style={{ listStyle: "none", margin: "0 5px" }}
+                style={{
+                  listStyle: "none",
+                  margin: "0 5px",
+                  cursor: "pointer"
+                }}
                 id={number}
                 key={number}
                 onClick={this.handleClick}
               >
-                {number}
+                <p
+                  style={
+                    currentPage == currentPage
+                      ? { color: "white" }
+                      : { color: "black" }
+                  }
+                >
+                  {number}
+                </p>
               </li>
             );
           })}
