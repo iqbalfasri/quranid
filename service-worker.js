@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/quranid/precache-manifest.86faa88d90b772b8d0290554ee413934.js"
+  "/quranid/precache-manifest.9c1f5beeed358c5262f5bc13ba86472e.js"
 );
 
 workbox.clientsClaim();

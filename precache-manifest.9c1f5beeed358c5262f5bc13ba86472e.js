@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/quranid/static/css/main.1d1f6dc9.chunk.css"
   },
   {
-    "revision": "c1d4b7353df864e8315fc408098fd66c",
+    "revision": "38af6f7d109a0f734479a71ab899ed9f",
     "url": "/quranid/index.html"
   }
 ];
