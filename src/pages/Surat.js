@@ -2,6 +2,9 @@ import React, { Component, Suspense } from "react";
 import { Redirect } from "react-router-dom";
 import renderHTML from "react-render-html";
 
+// Pages
+import Splash from "./Splash";
+
 // Component
 import Hero from "../components/Hero";
 // import SuratDetail from "../components/Surat";
@@ -43,12 +46,12 @@ class Surat extends Component {
   }
 
   render() {
-    console.log()
+    console.log();
     const { surat, currentPage, perAyat } = this.state;
 
     // Cek jika surat tidak ada, makan akan dilaihkan ke halaman not found
     if (surat === null) {
-      return <Redirect to="/notfound" />
+      return <Redirect to="/notfound" />;
     }
 
     // Logic buat menampilkan ayat dengan total yang di tentukan
@@ -108,7 +111,7 @@ class Surat extends Component {
 
     return (
       <div className="detail-surat">
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Splash />}>
           <Hero>
             <h1 className="hero-title">{localStorage.getItem("nama_surat")}</h1>
             <p className="container">

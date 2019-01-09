@@ -67,10 +67,6 @@ class Home extends Component {
             </div>
           </div>
         </div>
-
-        <footer>
-          <code>{"</>"} dengan ❤ oleh Iqbal Fasri</code>
-        </footer>
       </div>
     );
   }
