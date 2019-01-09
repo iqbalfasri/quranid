@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class Quran extends Component {
-  saveToLocalStorage(nomor, keterangan, nama, audio) {
+  saveToLocalStorage(nomor, keterangan, nama, audio, arti) {
     localStorage.setItem("nomo_surat", nomor);
     localStorage.setItem("keterangan_surat", keterangan);
     localStorage.setItem("nama_surat", nama);
     localStorage.setItem("audio_surat", audio);
+    localStorage.setItem("arti_surat", arti);
   }
 
   render() {
@@ -18,7 +19,8 @@ class Quran extends Component {
               this.props.nomorSurat,
               this.props.additionalData.keteranganSurat,
               this.props.namaSurat,
-              this.props.additionalData.audioSurat
+              this.props.additionalData.audioSurat,
+              this.props.additionalData.artiSurat
             )
           }
           to={`/surat/${this.props.nomorSurat}`}

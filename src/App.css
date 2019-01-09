@@ -1,8 +1,19 @@
+:root {
+  --primcolor: #7ed3b2;
+  --secondcolor: #b9e6d3;
+}
+
 .hero-title {
   font-size: 42px;
-  color: white;
+  color: #222222;
   text-align: center;
   font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.12);
+}
+.hero-description {
+  line-height: 3;
+  font-weight: 300;
+  color: #444444;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.12);
 }
 
@@ -35,7 +46,8 @@
   justify-content: center;
   align-items: center;
   color: white;
-  background-image: linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%);
+  background-color: var(--primcolor);
+  /* background-image: linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%); */
 }
 .splash-page h1 {
   font-size: 54px;
@@ -56,11 +68,11 @@
   text-align: left;
 }
 .list-surah p {
-  color: #FF719A;
+  color: var(--primcolor);
   font-weight: bold;
 }
 .list-surah h3 {
-  color: #FF719A;
+  color: var(--primcolor);
   font-size: 18px;
   font-weight: bold;
 }
@@ -98,8 +110,22 @@ footer code {
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: black;
-  /* background-image: url('./assets/ilus.png'); */
+}
+.notfound-page h1 {
+  font-size: 42px;
+  color: #444444;
+  font-weight: 700;
+  line-height: 100px;
+}
+.notfound-page-img {
+  width: 300px;
+  max-width: 300px;
+  margin-bottom: 40px;
+}
+.notfound-page-img img {
+  width: 100%;
 }

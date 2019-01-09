@@ -8,8 +8,10 @@ const Hero = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 500px;
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  min-height: 300px;
+  background-color: #f2f2f2;
+  background-size: 28px 28px;
+  background-image: radial-gradient(circle, #7ed3b2, #7ed3b2 1px, #b9e6d3 1px, #b9e6d3);
   text-align: center;
   position: relative;
 `;

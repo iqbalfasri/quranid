@@ -22,7 +22,8 @@ class Home extends Component {
     return (
       <div>
         <Hero>
-          <h1 className="hero-title">Al-Quran Bahasa Indonesia</h1>
+          <h1 className="hero-title">QuranID</h1>
+          <p className="hero-description">Al-Quran dengan terjemahan bahasa Indonesia.</p>
         </Hero>
 
         <div className="main-content">
@@ -53,7 +54,8 @@ class Home extends Component {
                       nomorSurat={quran.nomor}
                       additionalData={{
                         keteranganSurat: quran.keterangan,
-                        audioSurat: quran.audio
+                        audioSurat: quran.audio,
+                        artiSurat: quran.arti
                       }}
                     />
                   );
