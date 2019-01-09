@@ -41,6 +41,7 @@ class App extends Component {
             }
           />
           <Route path="/surat/:id" component={Surat} />
+          <Route path="/notfound" component={NotFound} />
           <Route component={NotFound} />
         </Switch>
       </div>
