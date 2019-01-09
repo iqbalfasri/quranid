@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import Search from "../Search/search";
-
 const Hero = styled.div`
   position: relative;
   display: flex;
@@ -31,13 +29,10 @@ export const HeroBackButton = styled.a`
 `;
 
 export default props => {
-  const img = require("../../assets/ilus.png");
   return (
     <Hero>
       <HeroContent>
         {props.children}
-        {/* <Search placeholder="Cari" /> */}
-        {/* <input className="hero-search" placeholder="Cari ayat" /> */}
       </HeroContent>
     </Hero>
   );

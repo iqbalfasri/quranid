@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 // Component
 import Hero from "../components/Hero";
@@ -17,11 +16,7 @@ class Home extends Component {
 
   render() {
     let filteredSurat = this.props.data.filter(surat => {
-      if (surat.nama.toLowerCase().indexOf(this.state.search) !== -1) {
-        console.log("Kosong");
-        return "Tidak ada hasil";
-      }
-      // return surat;
+      return surat.nama.toLowerCase().indexOf(this.state.search) !== -1;
     });
 
     return (
