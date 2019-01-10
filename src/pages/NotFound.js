@@ -9,7 +9,7 @@ class NotFound extends Component {
     return (
       <div className="notfound-page">
         <div className="notfound-page-img">
-          <img src={IMG_404} />
+          <img alt="Halaman tidak ditemukan" src={IMG_404} />
         </div>
         <h1>404 Not Found</h1>
         <Button href="/">Kembali ke beranda</Button>

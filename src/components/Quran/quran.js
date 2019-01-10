@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class Quran extends Component {
   saveToLocalStorage(nomor, keterangan, nama, audio, arti) {
-    localStorage.setItem("nomo_surat", nomor);
+    localStorage.setItem("nomor_surat", nomor);
     localStorage.setItem("keterangan_surat", keterangan);
     localStorage.setItem("nama_surat", nama);
     localStorage.setItem("audio_surat", audio);
@@ -23,7 +23,14 @@ class Quran extends Component {
               this.props.additionalData.artiSurat
             )
           }
-          to={`/surat/${this.props.nomorSurat}`}
+          to={{
+            pathname: `/surat/${this.props.nomorSurat}`,
+            additionalData: {
+              namaSurat: this.props.namaSurat,
+              artiSurat: this.props.additionalData.artiSurat,
+              audioSurat: this.props.additionalData.audioSurat,
+            }
+          }}
           params={{ testValue: 1 }}
           className="list-surah"
         >

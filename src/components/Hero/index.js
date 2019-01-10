@@ -11,7 +11,7 @@ const Hero = styled.div`
   min-height: 300px;
   background-color: #f2f2f2;
   background-size: 28px 28px;
-  background-image: radial-gradient(circle, #7ed3b2, #7ed3b2 1px, #b9e6d3 1px, #b9e6d3);
+  background-image: radial-gradient(circle, #b9e6d3, #b9e6d3 1px, #7ed3b2 1px, #7ed3b2);
   text-align: center;
   position: relative;
 `;

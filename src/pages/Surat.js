@@ -61,7 +61,7 @@ class Surat extends Component {
     // Render Ayat
     const renderAyat = currentAyat.map((surat, i) => {
       return (
-        <LazySuratDetail key={i} suratIndo={surat.id} suratArab={surat.ar} />
+        <LazySuratDetail key={i} detailSurat={surat} />
       );
     });
 
@@ -84,7 +84,9 @@ class Surat extends Component {
             left: 0,
             right: 0,
             padding: 20,
-            backgroundColor: "salmon"
+            backgroundColor: "rgba(255, 255, 255, 0.95)",
+            color: "#222",
+            boxShadow: "0 -10px 10px 0 rgba(0,64,128,.05)"
           }}
         >
           {pageNumber.map(number => {
@@ -125,7 +127,7 @@ class Surat extends Component {
             </audio>
           </Hero>
 
-          <div>
+          <div style={{ padding: "40px 0" }}>
             <div className="container">{renderAyat}</div>
             {surat.length < 10 ? null : renderPagination()}
           </div>
