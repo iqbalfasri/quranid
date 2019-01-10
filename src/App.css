@@ -148,3 +148,32 @@ footer code {
   width: 50px;
   font-weight: bold;
 }
+
+
+/* Pagination */
+.pagination-content {
+  list-style: none;
+  margin: 0 7px;
+  cursor: pointer;
+  font-size: 18px;
+  box-sizing: border-box;
+  padding: 20px;
+  transition: .1s all ease-in-out;
+}
+.pagination-content:hover {
+  color: var(--primcolor);
+}
+
+
+
+
+/* 
+* Responsive
+*/
+
+@media only screen and (max-width: 768px) {
+  .content h2 {
+    text-align: center;
+    margin: -5px 0 20px;
+  }
+}

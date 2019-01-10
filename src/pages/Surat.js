@@ -83,7 +83,7 @@ class Surat extends Component {
             bottom: 0,
             left: 0,
             right: 0,
-            padding: 20,
+            padding: '5px 0',
             backgroundColor: "rgba(255, 255, 255, 0.95)",
             color: "#222",
             boxShadow: "0 -10px 10px 0 rgba(0,64,128,.05)"
@@ -92,11 +92,7 @@ class Surat extends Component {
           {pageNumber.map(number => {
             return (
               <li
-                style={{
-                  listStyle: "none",
-                  margin: "0 5px",
-                  cursor: "pointer"
-                }}
+                className="pagination-content"
                 id={number}
                 key={number}
                 onClick={this.handleClick}

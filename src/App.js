@@ -42,7 +42,7 @@ class App extends Component {
                 <Route path="/notfound" component={NotFound} />
                 <Route component={NotFound} />
               </Switch>
-              <LazyFooter />
+              {/* <LazyFooter /> */}
             </React.Fragment>
           )}
         </Suspense>
