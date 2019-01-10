@@ -60,9 +60,7 @@ class Surat extends Component {
 
     // Render Ayat
     const renderAyat = currentAyat.map((surat, i) => {
-      return (
-        <LazySuratDetail key={i} detailSurat={surat} />
-      );
+      return <LazySuratDetail key={i} detailSurat={surat} />;
     });
 
     // Logic buat menampilkan pagination
@@ -83,7 +81,7 @@ class Surat extends Component {
             bottom: 0,
             left: 0,
             right: 0,
-            padding: '5px 0',
+            padding: "5px 0",
             backgroundColor: "rgba(255, 255, 255, 0.95)",
             color: "#222",
             boxShadow: "0 -10px 10px 0 rgba(0,64,128,.05)"
