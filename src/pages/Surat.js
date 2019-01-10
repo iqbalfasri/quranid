@@ -45,6 +45,23 @@ class Surat extends Component {
     });
   }
 
+  handleBack(e) {
+    // Cek Jika sudah pada halaman awal
+    if (this.state.currentPage === 1) {
+      return;
+    }
+
+    return this.setState({
+      currentPage: this.state.currentPage - 1
+    });
+  }
+
+  handleNext(e) {
+    this.setState({
+      currentPage: this.state.currentPage + 1
+    });
+  }
+
   render() {
     const { surat, currentPage, perAyat } = this.state;
 
@@ -90,36 +107,14 @@ class Surat extends Component {
           <nav aria-label="Page navigation example">
             <ul className="pagination">
               <a
-                onClick={() => {
-                  this.setState({
-                    currentPage: this.state.currentPage - 1
-                  });
-                }}
+                onClick={this.handleBack.bind(this)}
                 className="page-link"
                 href="#"
               >
                 back
               </a>
-              {pageNumber.map(number => {
-                return (
-                  <li className="page-item" key={number}>
-                    <a
-                      onClick={this.handleClick}
-                      id={number}
-                      className="page-link"
-                      href="#"
-                    >
-                      {number}
-                    </a>
-                  </li>
-                );
-              })}
               <a
-                onClick={() => {
-                  this.setState({
-                    currentPage: this.state.currentPage + 1
-                  });
-                }}
+                onClick={this.handleNext.bind(this)}
                 className="page-link"
                 href="#"
               >
