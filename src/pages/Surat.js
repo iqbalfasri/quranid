@@ -87,18 +87,46 @@ class Surat extends Component {
             boxShadow: "0 -10px 10px 0 rgba(0,64,128,.05)"
           }}
         >
-          {pageNumber.map(number => {
-            return (
-              <li
-                className="pagination-content"
-                id={number}
-                key={number}
-                onClick={this.handleClick}
+          <nav aria-label="Page navigation example">
+            <ul className="pagination">
+              <a
+                onClick={() => {
+                  this.setState({
+                    currentPage: this.state.currentPage - 1
+                  });
+                }}
+                className="page-link"
+                href="#"
               >
-                {number}
-              </li>
-            );
-          })}
+                back
+              </a>
+              {pageNumber.map(number => {
+                return (
+                  <li className="page-item" key={number}>
+                    <a
+                      onClick={this.handleClick}
+                      id={number}
+                      className="page-link"
+                      href="#"
+                    >
+                      {number}
+                    </a>
+                  </li>
+                );
+              })}
+              <a
+                onClick={() => {
+                  this.setState({
+                    currentPage: this.state.currentPage + 1
+                  });
+                }}
+                className="page-link"
+                href="#"
+              >
+                next
+              </a>
+            </ul>
+          </nav>
         </div>
       );
     };
