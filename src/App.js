@@ -10,22 +10,6 @@ import Home from "./pages/Home";
 import { QuranConsumer, QuranProvider } from "./context/Quran.context";
 import { SuratConsumer, SuratProvider } from "./context/Surat.context";
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      qurans: [],
-      isDataLoaded: false
-    };
-  }
-
-  componentDidMount() {
-    fetch("https://al-quran-8d642.firebaseio.com/data.json?print=pretty")
-      .then(response => response.json())
-      .then(quran => this.setState({ qurans: quran, isDataLoaded: true }))
-      .catch(error => console.log(error));
-  }
-
   render() {
     return (
       <div className="App">

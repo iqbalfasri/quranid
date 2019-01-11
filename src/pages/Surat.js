@@ -67,7 +67,7 @@ class Surat extends Component {
 
         <div style={{ padding: "40px 0" }}>
           <div className="container">{renderAyat}</div>
-          {renderPagination()}
+          {surat.length < 10 ? null : renderPagination()}
         </div>
       </div>
     );
