@@ -7,63 +7,15 @@ import Splash from "./Splash";
 
 // Component
 import Hero from "../components/Hero";
-// import SuratDetail from "../components/Surat";
+import { PaginateButton } from "../components/Button";
+import SuratDetail from "../components/Surat";
 const LazySuratDetail = React.lazy(() => import("../components/Surat"));
 
 class Surat extends Component {
-  constructor(props) {
-    super(props);
-
-    this.id = props.match.params.id;
-
-    this.state = {
-      surat: [],
-      currentPage: 1,
-      perAyat: 10
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  componentWillMount() {
-    fetch(
-      `https://al-quran-8d642.firebaseio.com/surat/${this.id}.json?print=pretty`
-    )
-      .then(response => response.json())
-      .then(surat => {
-        this.setState({
-          surat: surat
-        });
-      })
-      .catch(error => console.log(error));
-  }
-
-  handleClick(e) {
-    e.preventDefault();
-    this.setState({
-      currentPage: Number(e.target.id)
-    });
-  }
-
-  handleBack(e) {
-    // Cek Jika sudah pada halaman awal
-    if (this.state.currentPage === 1) {
-      return;
-    }
-
-    return this.setState({
-      currentPage: this.state.currentPage - 1
-    });
-  }
-
-  handleNext(e) {
-    this.setState({
-      currentPage: this.state.currentPage + 1
-    });
-  }
-
   render() {
-    const { surat, currentPage, perAyat } = this.state;
+    const { state } = this.props;
+    const { surat, currentPage, perAyat, isMentok } = state.state;
+    const { nextPage, previousPage } = state.actions;
 
     // Cek jika surat tidak ada, makan akan dilaihkan ke halaman not found
     if (surat === null) {
@@ -77,78 +29,51 @@ class Surat extends Component {
 
     // Render Ayat
     const renderAyat = currentAyat.map((surat, i) => {
-      return <LazySuratDetail key={i} detailSurat={surat} />;
+      return <SuratDetail key={i} detailSurat={surat} />;
     });
-
-    // Logic buat menampilkan pagination
-    const pageNumber = [];
-    for (let i = 1; i <= Math.ceil(surat.length / perAyat); i++) {
-      pageNumber.push(i);
-    }
 
     // Render Pagination
     const renderPagination = () => {
       return (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            position: "fixed",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            padding: "5px 0",
-            backgroundColor: "rgba(255, 255, 255, 0.95)",
-            color: "#222",
-            boxShadow: "0 -10px 10px 0 rgba(0,64,128,.05)"
-          }}
-        >
-          <nav aria-label="Page navigation example">
-            <ul className="pagination">
-              <a
-                onClick={this.handleBack.bind(this)}
-                className="page-link"
-                href="#"
+        <div className="pagination-wrapper fixed-bottom">
+          <div className="container">
+            <div className="d-flex justify-content-around">
+              <PaginateButton
+                isSecondary={currentPage === 1 ? true : false}
+                onClick={previousPage}
               >
-                back
-              </a>
-              <a
-                onClick={this.handleNext.bind(this)}
-                className="page-link"
-                href="#"
-              >
-                next
-              </a>
-            </ul>
-          </nav>
+                <h2>Sebelumnya</h2>
+              </PaginateButton>
+              <PaginateButton isSecondary={isMentok} onClick={nextPage}>
+                <h2>Selanjutnya</h2>
+              </PaginateButton>
+            </div>
+          </div>
         </div>
       );
     };
 
     return (
       <div className="detail-surat">
-        <Suspense fallback={<Splash />}>
-          <Hero>
-            <h1 className="hero-title">{localStorage.getItem("nama_surat")}</h1>
-            <p className="container">
-              {renderHTML(localStorage.getItem("arti_surat"))}
-            </p>
+        <Hero>
+          <h1 className="hero-title">{localStorage.getItem('nama_surat')}</h1>
+          <p className="hero-description">
+            {localStorage.getItem('arti_surat')}
+          </p>
 
-            <audio controls>
-              <source
-                src={localStorage.getItem("audio_surat")}
-                type="audio/mpeg"
-              />
-              Your browser does not support the audio element.
-            </audio>
-          </Hero>
+          <audio controls className="audio-surat">
+            <source
+              src={localStorage.getItem("audio_surat")}
+              type="audio/mpeg"
+            />
+            Your browser does not support the audio element.
+          </audio>
+        </Hero>
 
-          <div style={{ padding: "40px 0" }}>
-            <div className="container">{renderAyat}</div>
-            {surat.length < 10 ? null : renderPagination()}
-          </div>
-        </Suspense>
+        <div style={{ padding: "40px 0" }}>
+          <div className="container">{renderAyat}</div>
+          {renderPagination()}
+        </div>
       </div>
     );
   }

@@ -5,6 +5,8 @@ import Hero from "../components/Hero";
 import Search from "../components/Search";
 import Quran from "../components/Quran";
 
+// import { QuranConsumer, QuranProvider } from "./context/Quran.context";
+
 class Home extends Component {
   constructor(props) {
     super(props);

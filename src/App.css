@@ -11,10 +11,10 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.12);
 }
 .hero-description {
-  line-height: 3;
-  font-weight: 300;
-  color: #f0f0f0;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.12);
+  line-height: 3 !important;
+  font-weight: 300 !important;
+  color: #f0f0f0 !important;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.12) !important;
 }
 
 /* Content */
@@ -93,17 +93,33 @@ footer code {
   font-family: "Roboto Mono", Courier, monospace;
 }
 
-/* Detail Surat */
-.detail-surat p {
+/* Arti Ayat */
+.arti-ayat {
   display: block;
-  margin: 0 auto;
-  color: white;
+  color: #777777;
+  font-size: 18px;
   font-weight: 300;
-  text-align: center;
   line-height: 1.5;
-  opacity: 0.8;
-  margin: 20px 0 30px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.12);
+  margin: 15px 0 30px;
+}
+
+/* Arab Text */
+.arab-text {
+  text-align: right;
+  font-size: 2.5rem;
+  white-space: pre-line;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+/* Ejaan */
+.ejaan-text {
+  text-align: left;
+  color: rgb(34, 34, 34);
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: none;
+  margin: 20px 0px 0px;
 }
 
 .notfound-page {
@@ -130,6 +146,11 @@ footer code {
   width: 100%;
 }
 
+/* Surat */
+.surat {
+  display: flex;
+  align-items: center;
+}
 .surat-box {
   margin-bottom: 50px;
   padding: 10px 55px;
@@ -149,8 +170,13 @@ footer code {
   font-weight: bold;
 }
 
-
 /* Pagination */
+.pagination-wrapper {
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 -10px 10px 0 rgba(0, 0, 0, 0.05);
+}
 .pagination-content {
   list-style: none;
   margin: 0 7px;
@@ -158,14 +184,16 @@ footer code {
   font-size: 18px;
   box-sizing: border-box;
   padding: 20px;
-  transition: .1s all ease-in-out;
+  transition: 0.1s all ease-in-out;
 }
 .pagination-content:hover {
   color: var(--primcolor);
 }
 
-
-
+/* Audio Surat */
+.audio-surat {
+  /* padding: 20px; */
+}
 
 /* 
 * Responsive
@@ -175,5 +203,30 @@ footer code {
   .content h2 {
     text-align: center;
     margin: -5px 0 20px;
+  }
+  .arab-text {
+    font-size: 24px;
+  }
+  .ejaan-text {
+    font-size: 22px;
+  }
+  .surat {
+    justify-content: center;
+  }
+  .surat-nomor {
+    width: 30px;
+    height: 30px;
+  }
+  .surat-nomor h2 {
+    font-size: 14px !important;
+  }
+  .surat-box {
+    margin-bottom: 20px;
+  }
+  .surat-responsive-nomor {
+    display: flex;
+    align-content: flex-end;
+    justify-content: center;
+    margin-bottom: 15px;
   }
 }

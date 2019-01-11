@@ -15,11 +15,33 @@ const Button = styled.a`
   cursor: pointer;
   text-decoration: none !important;
   box-shadow: 10px 16px 40px 0 #b9e6d3;
-  transition: .2s all ease-in-out !important;
+  transition: 0.2s all ease-in-out !important;
 
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     box-shadow: 5px 12px 20px 0 #b9e6d3;
   }
 `;
 
+const PaginateButton = styled.button`
+  border: none;
+  outline: none !important;
+  border-radius: 30px;
+  text-align: center;
+  padding: 10px 24px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  color: ${props => (props.isSecondary ? "#777" : "#fff")};
+  background-color: ${props => (props.isSecondary ? "#f2f4fb" : "#7ed3b2")};
+  transition: 0.1s all ease-out;
+
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px ${props => props.isSecondary ? '#f2f4fb' : '#7ed3b2'};
+  }
+`;
+
 export default Button;
+export { PaginateButton };
