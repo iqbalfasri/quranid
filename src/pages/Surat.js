@@ -1,15 +1,10 @@
-import React, { Component, Suspense } from "react";
+import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import renderHTML from "react-render-html";
-
-// Pages
-import Splash from "./Splash";
 
 // Component
 import Hero from "../components/Hero";
 import { PaginateButton } from "../components/Button";
 import SuratDetail from "../components/Surat";
-const LazySuratDetail = React.lazy(() => import("../components/Surat"));
 
 class Surat extends Component {
   render() {
@@ -56,9 +51,9 @@ class Surat extends Component {
     return (
       <div className="detail-surat">
         <Hero>
-          <h1 className="hero-title">{localStorage.getItem('nama_surat')}</h1>
+          <h1 className="hero-title">{localStorage.getItem("nama_surat")}</h1>
           <p className="hero-description">
-            {localStorage.getItem('arti_surat')}
+            {localStorage.getItem("arti_surat")}
           </p>
 
           <audio controls className="audio-surat">
