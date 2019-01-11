@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{107:function(e,n,a){"use strict";a.r(n);var t=a(0),o=a.n(t);n.default=function(e){return o.a.createElement("footer",null,o.a.createElement("code",null,"</>"," dengan \u2764 oleh Iqbal Fasri"))}}}]);
-//# sourceMappingURL=2.6087bb1a.chunk.js.map
