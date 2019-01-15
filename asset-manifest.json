@@ -1,14 +1,14 @@
 {
-  "main.css": "/static/css/main.48cf2999.chunk.css",
-  "main.js": "/static/js/main.eb8098ee.chunk.js",
-  "main.js.map": "/static/js/main.eb8098ee.chunk.js.map",
-  "static/js/1.efd127c0.chunk.js": "/static/js/1.efd127c0.chunk.js",
-  "static/js/1.efd127c0.chunk.js.map": "/static/js/1.efd127c0.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/404ilus.png": "/static/media/404ilus.3df27bc8.png",
-  "static/css/main.48cf2999.chunk.css.map": "/static/css/main.48cf2999.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.e52516b6480f0214654c563767cc5a77.js": "/precache-manifest.e52516b6480f0214654c563767cc5a77.js",
-  "service-worker.js": "/service-worker.js"
+  "main.css": "/quranid/static/css/main.48cf2999.chunk.css",
+  "main.js": "/quranid/static/js/main.f0f92d71.chunk.js",
+  "main.js.map": "/quranid/static/js/main.f0f92d71.chunk.js.map",
+  "static/js/1.84b6c93e.chunk.js": "/quranid/static/js/1.84b6c93e.chunk.js",
+  "static/js/1.84b6c93e.chunk.js.map": "/quranid/static/js/1.84b6c93e.chunk.js.map",
+  "runtime~main.js": "/quranid/static/js/runtime~main.4b4d8e75.js",
+  "runtime~main.js.map": "/quranid/static/js/runtime~main.4b4d8e75.js.map",
+  "static/media/404ilus.png": "/quranid/static/media/404ilus.3df27bc8.png",
+  "static/css/main.48cf2999.chunk.css.map": "/quranid/static/css/main.48cf2999.chunk.css.map",
+  "index.html": "/quranid/index.html",
+  "precache-manifest.b0677046a88b45f8dd6493134dfe571f.js": "/quranid/precache-manifest.b0677046a88b45f8dd6493134dfe571f.js",
+  "service-worker.js": "/quranid/service-worker.js"
 }
