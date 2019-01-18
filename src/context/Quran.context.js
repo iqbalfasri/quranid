@@ -13,11 +13,15 @@ class QuranProvider extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch("https://al-quran-8d642.firebaseio.com/data.json?print=pretty")
-      .then(response => response.json())
-      .then(quran => this.setState({ qurans: quran, isDataLoaded: true }))
-      .catch(error => console.log(error));
+  async componentDidMount() {
+    const response = await fetch(
+      "https://al-quran-8d642.firebaseio.com/data.json?print=pretty"
+    ).then(res => res.json());
+
+    return this.setState({
+      qurans: response,
+      isDataLoaded: true
+    });
   }
 
   render() {

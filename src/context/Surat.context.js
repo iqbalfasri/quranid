@@ -18,20 +18,17 @@ class SuratProvider extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch(
+  async componentDidMount() {
+    const response = await fetch(
       `https://al-quran-8d642.firebaseio.com/surat/${
         this.props.noSurat
       }.json?print=pretty`
-    )
-      .then(response => response.json())
-      .then(surat => {
-        this.setState({
-          surat: surat,
-          isDataLoaded: true
-        });
-      })
-      .catch(error => console.log(error));
+    ).then(res => res.json())
+
+    return this.setState({
+      surat: response,
+      isDataLoaded: true
+    });
   }
 
   handleBack(e) {
