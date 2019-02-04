@@ -39,7 +39,10 @@ class Surat extends Component {
               >
                 <h2>Sebelumnya</h2>
               </PaginateButton>
-              <PaginateButton isSecondary={isMentok} onClick={nextPage}>
+              <PaginateButton
+                isSecondary={isMentok}
+                onClick={nextPage}
+              >
                 <h2>Selanjutnya</h2>
               </PaginateButton>
             </div>
