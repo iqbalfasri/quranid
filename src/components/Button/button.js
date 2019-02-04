@@ -24,7 +24,7 @@ const Button = styled.a`
   }
 `;
 
-const PaginateButton = styled.button`
+const PaginateButton = styled.a`
   border: none;
   outline: none !important;
   border-radius: 30px;
@@ -33,7 +33,7 @@ const PaginateButton = styled.button`
   font-weight: bold;
   font-size: 14px;
   cursor: pointer;
-  color: ${props => (props.isSecondary ? "#777" : "#fff")};
+  color: ${props => (props.isSecondary ? "#777" : "#fff !important")};
   background-color: ${props => (props.isSecondary ? "#f2f4fb" : "#7ed3b2")};
   transition: 0.1s all ease-out;
 
